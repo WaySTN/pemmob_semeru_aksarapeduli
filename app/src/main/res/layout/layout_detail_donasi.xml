@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:background="@color/white">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- Campaign Image -->
+        <ImageView
+            android:id="@+id/imgCampaign"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/pendidikan"
+            android:contentDescription="Gambar campaign"
+            android:layout_marginBottom="16dp"/>
+
+        <!-- Campaign Title -->
+        <TextView
+            android:id="@+id/tvTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Astoroflexia®"
+            android:textColor="@color/black"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="8dp"/>
+
+        <!-- Campaign Subtitle -->
+        <TextView
+            android:id="@+id/tvSubtitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Bangun Kembali Sekolah yang Hancur, Wujudkan Masa Depan Cerah"
+            android:textColor="@color/blue_dark"
+            android:textSize="16sp"
+            android:layout_marginBottom="16dp"/>
+
+        <!-- Progress Section -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginBottom="24dp"
+
+            android:padding="16dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="8dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Terkumpul"
+                    android:textColor="@color/gray_dark"
+                    android:textSize="14sp"/>
+
+                <TextView
+                    android:id="@+id/tvCollected"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Rp3.000.000"
+                    android:textColor="@color/blue_dark"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:layout_marginStart="4dp"/>
+            </LinearLayout>
+
+            <ProgressBar
+                android:id="@+id/progressBar"
+                style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="8dp"
+                android:layout_marginBottom="8dp"
+                android:progress="30"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tvProgress"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="30% tercapai"
+                    android:textColor="@color/blue_dark"
+                    android:textSize="12sp"/>
+
+                <ProgressBar
+                    android:id="@+id/progressBarLoading"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:visibility="gone" />
+
+                <TextView
+                    android:id="@+id/tvTarget"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:text="Target: Rp10.000.000"
+                    android:textColor="@color/gray_dark"
+                    android:textSize="12sp"/>
+
+                <TextView
+                    android:id="@+id/tvDeadline"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:text="Sisa 2 minggu"
+                    android:textColor="@color/red"
+                    android:textSize="12sp"/>
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- Description Section -->
+        <TextView
+            android:id="@+id/tvDescription"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Di pedalaman bekas keringat takut, Keonkukan Cipta hangat, Kekuatan untukku ini, berkat ridho Tuhan yang maha kuasa menjadi tempat belajar dengan penuh semangat..."
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            android:layout_marginBottom="24dp"/>
+
+        <!-- Usage Plan Section -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Dana akan digunakan untuk:"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="8dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginBottom="24dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="1. Membangun ruang kelas yang layak dan aman"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                android:layout_marginBottom="4dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="2. Membeli meja, kursi dan papan tulis baru"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                android:layout_marginBottom="4dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="3. Membeli peralatan sekolah yang memadai"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                android:layout_marginBottom="4dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="4. Membangun kamar mandi dan air bersih bagi para siswa"
+                android:textColor="@color/black"
+                android:textSize="14sp"/>
+        </LinearLayout>
+
+        <!-- Donate Button -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnDonate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="DONASI SEKARANG"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:textAllCaps="true"
+            app:backgroundTint="@color/blue_dark"
+            app:cornerRadius="8dp"
+            style="@style/Widget.MaterialComponents.Button"
+            android:layout_marginTop="16dp"/>
+    </LinearLayout>
+</ScrollView>

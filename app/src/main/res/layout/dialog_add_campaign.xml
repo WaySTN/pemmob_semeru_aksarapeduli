@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Tambah Campaign Pendidikan"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="16dp"/>
+
+    <!-- Judul Campaign -->
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tilTitle"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="12dp"
+        app:hintTextColor="@color/black"
+        app:boxStrokeColor="@color/black"
+        app:errorEnabled="true">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Judul Campaign"
+            android:textColor="@color/black"
+            android:inputType="textCapSentences"
+            android:maxLines="2"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!-- Deskripsi -->
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tilDescription"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="12dp"
+        app:hintTextColor="@color/black"
+        app:boxStrokeColor="@color/black"
+        app:errorEnabled="true">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etDescription"
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:gravity="top"
+            android:hint="Deskripsi"
+            android:inputType="textMultiLine|textCapSentences"
+            android:textColor="@color/black"
+            android:scrollbars="vertical"
+            android:maxLines="6"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!-- Target dan Deadline -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="12dp">
+
+        <!-- Target Amount -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tilTargetAmount"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            app:hintTextColor="@color/black"
+            app:boxStrokeColor="@color/black"
+            app:errorEnabled="true">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etTargetAmount"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Target (Rp)"
+                android:inputType="number"
+                android:textColor="@color/black"
+                android:maxLength="12"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- Deadline -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tilDeadline"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_weight="1"
+            app:hintTextColor="@color/black"
+            app:boxStrokeColor="@color/black"
+            app:errorEnabled="true"
+            app:endIconMode="custom"
+            app:endIconDrawable="@drawable/ic_calendar"
+            app:endIconTint="@color/black">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etDeadline"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Batas Waktu"
+                android:textColor="@color/black"
+                android:focusable="false"
+                android:focusableInTouchMode="false"
+                android:clickable="true"
+                android:cursorVisible="false"
+                android:inputType="none"/>
+        </com.google.android.material.textfield.TextInputLayout>
+    </LinearLayout>
+
+    <!-- Action Buttons -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="16dp"
+        android:gravity="end">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnCancel"
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            android:layout_marginEnd="8dp"
+            android:text="BATAL"
+            android:textColor="@color/black"
+            android:minWidth="100dp"
+            app:backgroundTint="@color/gray_light"
+            app:cornerRadius="8dp"
+            app:strokeColor="@color/gray_light"
+            app:strokeWidth="1dp"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnSave"
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            android:text="SIMPAN"
+            android:textColor="@color/white"
+            android:minWidth="100dp"
+            app:backgroundTint="@color/blue_dark"
+            app:cornerRadius="8dp"
+            style="@style/Widget.MaterialComponents.Button"/>
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="blue_light">#03A9F4</color>
+    <color name="blue_500">#2196F3</color>
+    <color name="gray_light">#80000000</color>
+    <color name="red">#FF3D30</color>
+    <color name="gray_dark">#424242</color>
+    <color name="blue_dark">#1A73E8</color>
+    <color name="red_error">#EA4335</color>
+    <color name="gray_medium">#9E9E9E</color>
+    <color name="switch_thumb">#4285F4</color>
+    <color name="switch_track">#E0E0E0</color>
+    <color name="gray_darker">#616161</color>
+    <color name="blue_primary">#1E88E5</color>
+    <color name="green">#4CAF50</color>
+    <color name="orange">#FF9800</color>
+    <color name="gray">#9E9E9E</color>
+
+    <color name="primary">#3F51B5</color>
+    <color name="primary_dark">#303F9F</color>
+    <color name="accent">#FF4081</color>
+
+
+
+    <!-- Primary Colors -->
+    <color name="primary_blue">#1E88E5</color>
+    <color name="primary_blue_dark">#1565C0</color>
+    <color name="primary_blue_light">#42A5F5</color>
+
+    <!-- Background Colors -->
+    <color name="background_primary">#F8FAFC</color>
+    <color name="background_secondary">#FFFFFF</color>
+    <color name="partnership_bg">#EDF7FF</color>
+
+    <!-- Text Colors -->
+    <color name="text_primary">#1F2937</color>
+    <color name="text_secondary">#6B7280</color>
+    <color name="text_hint">#9CA3AF</color>
+
+    <!-- White Variants -->
+
+    <color name="white_80">#CCFFFFFF</color>
+
+    <!-- Action Colors - Green -->
+    <color name="action_green">#10B981</color>
+    <color name="action_green_bg">#ECFDF5</color>
+    <color name="action_green_icon_bg">#D1FAE5</color>
+
+    <!-- Action Colors - Orange -->
+    <color name="action_orange">#F59E0B</color>
+    <color name="action_orange_bg">#FFFBEB</color>
+    <color name="action_orange_icon_bg">#FEF3C7</color>
+
+    <!-- Accent Colors -->
+    <color name="see_all_bg">#EFF6FF</color>
+
+    <!-- Shadow Colors -->
+    <color name="shadow_light">#10000000</color>
+    <color name="shadow_medium">#20000000</color>
+
+    <!-- Status Colors -->
+    <color name="success">#10B981</color>
+    <color name="warning">#F59E0B</color>
+    <color name="error">#EF4444</color>
+    <color name="info">#3B82F6</color>
+
+
+    <!-- Backgrounds -->
+    <color name="bg_light">#FAFAFA</color>
+
+    <!-- colors.xml -->
+    <color name="colorPrimary">#6200EE</color>
+    <color name="colorPrimaryDark">#3700B3</color>
+    <color name="colorAccent">#03DAC5</color>
+
+
+    <color name="green_light">#4CAF50</color>
+    <color name="green_dark">#388E3C</color>
+    <color name="yellow_light">#FF9800</color>
+    <color name="yellow_dark">#F57C00</color>
+    <color name="red_light">#F44336</color>
+    <color name="red_dark">#D32F2F</color>
+</resources>

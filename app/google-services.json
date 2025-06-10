@@ -1,0 +1,68 @@
+{
+  "project_info": {
+    "project_number": "408671147688",
+    "firebase_url": "https://aksara-peduli-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "aksara-peduli",
+    "storage_bucket": "aksara-peduli.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:408671147688:android:cab0bfe4d41d7f0b67949d",
+        "android_client_info": {
+          "package_name": "com.example.aksaraaa"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDGDxnNi5fkEyn_r4WY3w3yKM0DX933sMo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:408671147688:android:b21d6823a252ad0667949d",
+        "android_client_info": {
+          "package_name": "com.example.modul_kelompok5"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDGDxnNi5fkEyn_r4WY3w3yKM0DX933sMo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:408671147688:android:5cc32fc6c4e27e9767949d",
+        "android_client_info": {
+          "package_name": "com.example.semeru"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDGDxnNi5fkEyn_r4WY3w3yKM0DX933sMo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

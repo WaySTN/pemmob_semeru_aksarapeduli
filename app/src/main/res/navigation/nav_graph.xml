@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/kabarAdminFragment">
+
+    <!-- Fragment Daftar Kabar -->
+    <fragment
+        android:id="@+id/kabarAdminFragment"
+        android:name="com.example.aksaraaa.features.kabar.admin.KabarAdminFragment"
+        android:label="Kelola Kabar"
+        tools:layout="@layout/fragment_kabar_admin">
+
+        <action
+            android:id="@+id/action_to_addKabar"
+            app:destination="@id/addEditKabarFragment" />
+
+        <action
+            android:id="@+id/action_to_editKabar"
+            app:destination="@id/addEditKabarFragment" />
+    </fragment>
+
+    <!-- Fragment Tambah/Edit Kabar -->
+    <fragment
+        android:id="@+id/addEditKabarFragment"
+        android:name="com.example.aksaraaa.features.kabar.admin.AddEditKabarFragment"
+        android:label="Tambah Kabar"
+        tools:layout="@layout/fragment_add_edit_kabar">
+
+        <argument
+            android:name="kabar"
+            app:argType="com.example.aksaraaa.models.Kabar"
+            android:defaultValue="@null" />
+    </fragment>
+
+    <!-- Fragment Donasi -->
+    <fragment
+        android:id="@+id/donasiFragmentUser"
+        android:name="com.example.aksaraaa.features.donasi.user.DonasiFragmentUser"
+        android:label="Donasi">
+
+        <action
+            android:id="@+id/action_donasiFragmentUser_to_detailDonasiFragment"
+            app:destination="@id/detailDonasiFragment" />
+    </fragment>
+
+    <!-- Fragment Detail Donasi -->
+    <fragment
+        android:id="@+id/detailDonasiFragment"
+        android:name="com.example.aksaraaa.features.donasi.user.DetailDonasiFragment"
+        android:label="Detail Donasi">
+
+        <action
+            android:id="@+id/action_detailDonasiFragment_to_pembayaranDonasiFragment"
+            app:destination="@id/pembayaranDonasiFragment" />
+    </fragment>
+
+    <!-- Fragment Pembayaran Donasi -->
+    <fragment
+        android:id="@+id/pembayaranDonasiFragment"
+        android:name="com.example.aksaraaa.features.donasi.user.DonasiPaymentFragment"
+        android:label="Pembayaran" />
+
+    <!-- Fragment History Donasi -->
+    <fragment
+        android:id="@+id/historyDonasiFragmentUser"
+        android:name="com.example.aksaraaa.features.donasi.admin.HistoryDonasiAdminFragmentUser"
+        android:label="History Donasi"
+        tools:layout="@layout/fragment_history_donasi_admin" />
+
+    <fragment
+        android:id="@+id/berandaFragmentAdmin"
+        android:name="com.example.aksaraaa.features.beranda.admin.BerandaFragmentAdmin"
+        tools:layout="@layout/fragment_beranda_admin">
+        <action
+            android:id="@+id/action_berandaFragmentAdmin_to_historyDonasiAdminFragment"
+            app:destination="@id/historyDonasiAdminFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/historyDonasiAdminFragment"
+        android:name="com.example.aksaraaa.features.beranda.admin.history.HistoryDonasiAdminFragment"
+        tools:layout="@layout/fragment_history_donasi_admin" />
+
+</navigation>
