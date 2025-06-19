@@ -36,7 +36,7 @@ public class ProfilUserFragment extends Fragment {
         // Initialize views
         tvName = view.findViewById(R.id.tvName);
         tvEmail = view.findViewById(R.id.tvEmail);
-        layoutFAQ = view.findViewById(R.id.layoutFAQ); // Sesuaikan ID ini dengan layout Anda
+        layoutFAQ = view.findViewById(R.id.layoutFAQ);
 
         // Initialize Firebase
         mAuth = FirebaseAuth.getInstance();
@@ -48,7 +48,7 @@ public class ProfilUserFragment extends Fragment {
         // Set click listeners
         view.findViewById(R.id.layoutDataDiri).setOnClickListener(v -> navigateToEditProfile());
         view.findViewById(R.id.btnLogout).setOnClickListener(v -> confirmLogout());
-        layoutFAQ.setOnClickListener(v -> navigateToFAQ()); // Tambahkan listener FAQ
+        layoutFAQ.setOnClickListener(v -> navigateToFAQ());
 
         return view;
     }
@@ -56,6 +56,7 @@ public class ProfilUserFragment extends Fragment {
     private void loadUserData() {
         FirebaseUser currentUser = mAuth.getCurrentUser();
         if (currentUser != null) {
+            // Coba ambil data dari Firestore
             db.collection("users").document(currentUser.getUid())
                     .get()
                     .addOnCompleteListener(task -> {
@@ -68,15 +69,33 @@ public class ProfilUserFragment extends Fragment {
                                 tvName.setText(name != null ? name : "Nama Pengguna");
                                 tvEmail.setText(email != null ? email : currentUser.getEmail());
                             } else {
-                                tvName.setText(currentUser.getDisplayName() != null ?
-                                        currentUser.getDisplayName() : "Nama Pengguna");
-                                tvEmail.setText(currentUser.getEmail());
+                                // Dokumen tidak ada, gunakan data dari FirebaseAuth
+                                setUserDataFromAuth(currentUser);
                             }
                         } else {
-                            Toast.makeText(getContext(), "Gagal memuat data profil", Toast.LENGTH_SHORT).show();
+                            // Jika gagal mengakses Firestore, gunakan data dari FirebaseAuth
+                            // Tidak menampilkan toast error, langsung gunakan data yang tersedia
+                            setUserDataFromAuth(currentUser);
                         }
+                    })
+                    .addOnFailureListener(e -> {
+                        // Jika ada error (termasuk PERMISSION_DENIED), gunakan data dari FirebaseAuth
+                        setUserDataFromAuth(currentUser);
                     });
+        } else {
+            // User tidak login, redirect ke login
+            startActivity(new Intent(getActivity(), LoginUser.class));
+            if (getActivity() != null) {
+                getActivity().finish();
+            }
         }
+    }
+
+    private void setUserDataFromAuth(FirebaseUser currentUser) {
+        tvName.setText(currentUser.getDisplayName() != null ?
+                currentUser.getDisplayName() : "Nama Pengguna");
+        tvEmail.setText(currentUser.getEmail() != null ?
+                currentUser.getEmail() : "Email tidak tersedia");
     }
 
     private void navigateToEditProfile() {
@@ -92,7 +111,7 @@ public class ProfilUserFragment extends Fragment {
         if (getActivity() != null) {
             getActivity().getSupportFragmentManager()
                     .beginTransaction()
-                    .replace(R.id.UserFragment, faqFragment) // Ganti 'UserFragment' jika ID container Anda berbeda
+                    .replace(R.id.UserFragment, faqFragment)
                     .addToBackStack(null)
                     .commit();
         }
@@ -108,8 +127,22 @@ public class ProfilUserFragment extends Fragment {
     }
 
     private void logoutUser() {
-        mAuth.signOut();
-        startActivity(new Intent(getActivity(), LoginUser.class));
-        requireActivity().finish();
+        try {
+            mAuth.signOut();
+
+            // Tampilkan toast logout berhasil
+            Toast.makeText(getContext(), "Logout berhasil", Toast.LENGTH_SHORT).show();
+
+            // Redirect ke login
+            Intent intent = new Intent(getActivity(), LoginUser.class);
+            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+            startActivity(intent);
+
+            if (getActivity() != null) {
+                getActivity().finish();
+            }
+        } catch (Exception e) {
+            Toast.makeText(getContext(), "Terjadi kesalahan saat logout", Toast.LENGTH_SHORT).show();
+        }
     }
 }
